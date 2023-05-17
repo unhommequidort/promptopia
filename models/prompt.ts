@@ -1,7 +1,9 @@
 import { Schema, model, models } from 'mongoose';
 import User, { IUser } from './user';
+import { Key } from 'react';
 
 export interface IPrompt {
+  _id?: Key | null | undefined | Schema.Types.ObjectId;
   creator: any;
   prompt: string;
   tag: string;

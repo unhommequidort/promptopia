@@ -2,11 +2,10 @@
 import { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
 import { IPrompt } from '@models/prompt';
-import ts from 'typescript';
 
 interface PromptCardListProps {
   data: IPrompt[];
-  handleTagClick: (tag: string) => void;
+  handleTagClick?: (tag: string) => void;
 }
 
 const PromptCardList = ({
@@ -17,8 +16,7 @@ const PromptCardList = ({
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
         <PromptCard
-          // @ts-ignore
-          key={post._id}
+          key={post._id as string}
           post={post}
           handleTagClick={handleTagClick}
           handleEdit={() => {}}

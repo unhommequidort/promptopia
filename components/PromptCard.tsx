@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 interface PromptCardProps {
   post: IPrompt;
-  handleTagClick: (tag: string) => void;
+  handleTagClick?: (tag: string) => void;
   handleEdit: () => void;
   handleDelete: () => void;
 }

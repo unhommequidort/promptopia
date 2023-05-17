@@ -27,7 +27,6 @@ const CreatePromptPage = () => {
         method: 'POST',
         body: JSON.stringify({
           prompt: post.prompt,
-          // @ts-ignore
           userId: session?.user?.id,
           tag: post.tag,
         }),
