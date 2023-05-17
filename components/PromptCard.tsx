@@ -22,6 +22,14 @@ const PromptCard = ({
   const pathName = usePathname();
   const router = useRouter();
 
+  const handleProfileClick = () => {
+    console.log(post);
+
+    if (post.creator._id === session?.user.id) return router.push('/profile');
+
+    router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
+  };
+
   const handleCopy = () => {
     setCopied(post.prompt);
     navigator.clipboard.writeText(post.prompt);
@@ -31,7 +39,10 @@ const PromptCard = ({
   return (
     <div className="prompt_card">
       <div className="flex justify-between items-start gap-5">
-        <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+        <div
+          className="flex-1 flex justify-start items-center gap-3 cursor-pointer"
+          onClick={handleProfileClick}
+        >
           <Image
             src={post.creator.image as string}
             alt="user"
@@ -44,7 +55,8 @@ const PromptCard = ({
               {post.creator.username}
             </h3>
             <p className="font-inter text-sm text-gray-500">
-              {post.creator.email}
+              email@example.com
+              {/* {post.creator.email} */}
             </p>
           </div>
         </div>
