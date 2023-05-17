@@ -1,9 +1,10 @@
 import { Schema, model, models } from 'mongoose';
+import User, { IUser } from './user';
 
 export interface IPrompt {
-  creator: Schema.Types.ObjectId;
+  creator: any;
   prompt: string;
-  tags: string;
+  tag: string;
 }
 
 const promptScheme = new Schema<IPrompt>({
@@ -15,7 +16,7 @@ const promptScheme = new Schema<IPrompt>({
     type: String,
     required: [true, 'Prompt is required!'],
   },
-  tags: {
+  tag: {
     type: String,
     required: [true, 'Tag is required!'],
   },

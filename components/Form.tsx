@@ -41,16 +41,16 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }: PostProps) => {
         </label>
         <label htmlFor="tag">
           <span className="font-satoshi font-semibold text-base text-gray-700">
-            Tags {` `}
+            Tag {` `}
             <span className="font-normal">
               (#product, #webdevelopment, #idea)
             </span>
           </span>
           <input
-            name="tags"
-            id="tags"
-            value={post.tags}
-            onChange={(e) => setPost({ ...post, tags: e.target.value })}
+            name="tag"
+            id="tag"
+            value={post.tag}
+            onChange={(e) => setPost({ ...post, tag: e.target.value })}
             placeholder="#tag"
             required
             className="form_input"

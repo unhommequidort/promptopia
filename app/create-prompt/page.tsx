@@ -11,7 +11,7 @@ const CreatePromptPage = () => {
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState<IPrompt>({
     prompt: '',
-    tags: '',
+    tag: '',
     creator: {} as Schema.Types.ObjectId,
   });
 
@@ -27,9 +27,9 @@ const CreatePromptPage = () => {
         method: 'POST',
         body: JSON.stringify({
           prompt: post.prompt,
+          // @ts-ignore
           userId: session?.user?.id,
-          // email: session?.data?.user?.email,
-          tags: post.tags,
+          tag: post.tag,
         }),
       });
       if (response.ok) {
