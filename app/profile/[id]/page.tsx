@@ -50,7 +50,7 @@ const ViewProfilePage = ({ params }: { params: { id: string } }) => {
   };
   return (
     <Profile
-      name={`${username}'s posts`}
+      name={`${username}'s`}
       description="Welcome to your personalized profile page"
       data={posts}
       handleEdit={handleEdit}
